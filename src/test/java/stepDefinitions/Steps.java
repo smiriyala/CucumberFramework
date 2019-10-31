@@ -46,10 +46,11 @@ public class Steps {
 		 Select dropdowncolor = new Select(driver.findElement(By.id("pa_color"))); 
 		 dropdowncolor.selectByIndex(1);
 		 
-		 Thread.sleep(5000);
+		 
 	
 		 Select dropdownsize = new Select(driver.findElement(By.id("pa_size"))); 
 		 dropdownsize.selectByIndex(1);
+		 Thread.sleep(5000);
 		 
 		 WebElement addToCart = driver.findElement(By.cssSelector("button.single_add_to_cart_button"));
 		 addToCart.click(); 
