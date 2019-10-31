@@ -9,8 +9,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
-
-import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
 
@@ -40,20 +38,19 @@ public class Steps {
 		 
 		 JavascriptExecutor js = (JavascriptExecutor) driver;
 		 js.executeScript("window.scrollBy(0,500)");
-		 Thread.sleep(5000);
 		 
-		  
+		 Thread.sleep(10000);
 		 Select dropdowncolor = new Select(driver.findElement(By.id("pa_color"))); 
 		 dropdowncolor.selectByIndex(1);
 		 
-		 
-	
+		 Thread.sleep(10000);
 		 Select dropdownsize = new Select(driver.findElement(By.id("pa_size"))); 
 		 dropdownsize.selectByIndex(1);
-		 Thread.sleep(5000);
 		 
+		 Thread.sleep(10000);
 		 WebElement addToCart = driver.findElement(By.cssSelector("button.single_add_to_cart_button"));
-		 addToCart.click(); 
+		 addToCart.click();
+		 
 	}
 
 	@When("^moves to checkout from mini cart$")
