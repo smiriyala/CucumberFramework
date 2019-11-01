@@ -25,7 +25,7 @@ public class Steps {
 	 
 	@Given("^user is on Home Page$")
 	public void user_is_on_Home_Page() throws Throwable {
-		System.setProperty("webdriver.chrome.driver","C:\\Libs\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver","C:\\tools\\Jenkins\\workspace\\cucumberFrameworkpipeline\\driver\\chromedriver.exe");
 		 driver = new ChromeDriver();
 		 driver.manage().window().maximize();
 		 
