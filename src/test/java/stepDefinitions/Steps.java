@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import cucumber.api.java.en.Given;
@@ -30,15 +31,18 @@ public class Steps {
 	@Given("^user is on Home Page$")
 	public void user_is_on_Home_Page() throws Throwable {
 		
-		System.setProperty("webdriver.chrome.driver","C:\\Libs\\chromedriver.exe");
+		//System.setProperty("webdriver.chrome.driver","C:\\Libs\\chromedriver.exe");
+		System.setProperty("webdriver.gecko.driver","C:\\libs\\geckodriver.exe");
+		
 		 
 		//ChromeOptions chromeOptions = new ChromeOptions();
 	    //chromeOptions.addArguments("--verbose");
 	    //chromeOptions.addArguments("--whitelisted-ips='192.168.0.00:30650'");
 	   // chromeOptions.addArguments("--proxy-server=192.168.0.14:21414");
 
+		driver= new FirefoxDriver();
 		
-		 driver = new ChromeDriver();
+		 //driver = new ChromeDriver();
 		 driver.manage().window().maximize();
 		 
 		 //Dimension d = new Dimension(1382,744); 
@@ -82,6 +86,10 @@ public class Steps {
 		CartPage cartPage = new CartPage(driver);
 		
 		cartPage.clickOn_Cart();
+		
+		 JavascriptExecutor js = (JavascriptExecutor) driver;
+		 js.executeScript("window.scrollBy(0,500)");
+		 
 		cartPage.clickOn_ContinueToCheckout(); 
 		
 	}

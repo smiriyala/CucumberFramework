@@ -12,10 +12,11 @@ public class CartPage {
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(how = How.CSS, using = ".cart-button") 
+	
+	@FindBy(how = How.XPATH, using = "//*[@id=\"nav-menu-item-cart\"]/a/span/span[2]") 
 	private WebElement btn_Cart;
 	
-	@FindBy(how = How.CSS, using = ".checkout-button.alt") 
+	@FindBy(how = How.XPATH, using = "//*[@id=\"post-6\"]/div/div/div[2]/div[2]/div/a") 
 	private WebElement btn_ContinueToCheckout;
 	
 	
