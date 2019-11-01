@@ -7,6 +7,8 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
 import pageObjects.CartPage;
@@ -25,8 +27,17 @@ public class Steps {
 	 
 	@Given("^user is on Home Page$")
 	public void user_is_on_Home_Page() throws Throwable {
+		
 		System.setProperty("webdriver.chrome.driver","C:\\Libs\\chromedriver.exe");
-		 driver = new ChromeDriver();
+		 
+		ChromeOptions chromeOptions = new ChromeOptions();
+	    chromeOptions.addArguments("--verbose");
+	    chromeOptions.addArguments("--whitelisted-ips='192.168.0.14'");
+	    //chromeOptions.addArguments("--proxy-server=192.168.0.14:21414");
+
+
+		
+		driver = new ChromeDriver(chromeOptions);
 		 driver.manage().window().maximize();
 		 
 		 //Dimension d = new Dimension(1382,744); 
