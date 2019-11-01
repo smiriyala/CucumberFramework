@@ -40,13 +40,13 @@ public class ProductListingPage {
 	public void clickOn_addColor() {
 		opt_color.click();
 		Select dropdowncolor = new Select(opt_color); 
-		dropdowncolor.selectByIndex(1);
+		dropdowncolor.selectByVisibleText("White");
 	}
 	
 	public void clickOn_Addsize() {
 		opt_size.click();
 		Select dropdownsize = new Select(opt_size); 
-		 dropdownsize.selectByIndex(1);
+		 dropdownsize.selectByVisibleText("Medium");
 	}
 
 }
