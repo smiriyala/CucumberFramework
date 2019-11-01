@@ -66,8 +66,11 @@ public class Steps {
 		
 		
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		 js.executeScript("window.scrollBy(0,500)");
+		js.executeScript("window.scrollBy(0,500)");
+		
+		checkoutPage = new CheckoutPage(driver);
 		checkoutPage.fill_PersonalDetails(); 
 	}
 

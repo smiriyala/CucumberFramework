@@ -15,10 +15,10 @@ public class CheckoutPage {
 	     PageFactory.initElements(driver, this);
 	 }
 	
-	@FindBy(how = How.CSS, using = "#billing_first_name") 
+	@FindBy(how = How.ID, using ="billing_first_name") 
 	private WebElement txtbx_FirstName;
 	 
-	 @FindBy(how = How.CSS, using = "#billing_last_name") 
+	 @FindBy(how = How.ID, using ="billing_last_name") 
 	 private WebElement txtbx_LastName;
 	 
 	 @FindBy(how = How.CSS, using = "#billing_address_1") 
@@ -47,7 +47,6 @@ public class CheckoutPage {
 	 
 	 
 	 public void enter_Name(String name) {
-		 
 		 txtbx_FirstName.sendKeys(name);
 	 	}
 	 
