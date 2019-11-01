@@ -12,6 +12,7 @@ import pageObjects.CheckoutPage;
 import pageObjects.HomePage;
 import pageObjects.ProductListingPage;
 
+
 public class Steps {
 	
 	WebDriver driver;
@@ -66,9 +67,7 @@ public class Steps {
 		
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0,300)");
-		
-		checkoutPage = new CheckoutPage(driver);
+		 js.executeScript("window.scrollBy(0,500)");
 		checkoutPage.fill_PersonalDetails(); 
 	}
 

@@ -2,7 +2,6 @@ package pageObjects;
 
 import java.util.List;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
@@ -40,8 +39,8 @@ public class ProductListingPage {
 	
 	public void clickOn_addColor() {
 		opt_color.click();
-		Select dropdownsize = new Select(opt_color); 
-		 dropdownsize.selectByIndex(1);
+		Select dropdowncolor = new Select(opt_color); 
+		dropdowncolor.selectByIndex(1);
 	}
 	
 	public void clickOn_Addsize() {

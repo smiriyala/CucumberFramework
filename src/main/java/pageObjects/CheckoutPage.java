@@ -73,39 +73,8 @@ public class CheckoutPage {
 	 
 	 public void enter_Email(String email) {
 		 txtbx_Email.sendKeys(email);
-	 	}
+	 }
 
-	 
-	 
-	 
-	/*
-	 * public void enter_Address(String address) { txtbx_Address.sendKeys(address);
-	 * }
-	 * 
-	 * public void select_Country(String countryName) {
-	 * drpdwn_CountryDropDownArrow.click(); try { Thread.sleep(2000); } catch
-	 * (InterruptedException e) {
-	 * 
-	 * }
-	 * 
-	 * for(WebElement country : country_List){
-	 * if(country.getText().equals(countryName)) { country.click(); try {
-	 * Thread.sleep(3000);} catch (InterruptedException e) {
-	 * 
-	 * } break; } } }
-	 * 
-	 * public void select_County(String countyName) {
-	 * drpdwn_CountyDropDownArrow.click(); try { Thread.sleep(2000); } catch
-	 * (InterruptedException e) {
-	 * 
-	 * }
-	 * 
-	 * for(WebElement county : country_List){
-	 * if(county.getText().equals(countyName)) { county.click(); try {
-	 * Thread.sleep(3000); } catch (InterruptedException e) {
-	 * 
-	 * } break; } } }
-	 */
 	  
 	 public void check_TermsAndCondition(boolean value) {
 		 
