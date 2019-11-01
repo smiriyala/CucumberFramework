@@ -1,8 +1,6 @@
 package pageObjects;
 
 import java.util.List;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
@@ -41,23 +39,30 @@ public class ProductListingPage {
 	}
 	
 	public void clickOn_addColor() {
-		//opt_color.click();
+		opt_color.click();
+		
 		Select dropdowncolor = new Select(opt_color);
 		dropdowncolor.selectByIndex(1);
-		
-		//Select dropdowncolor = new Select(opt_color); 
-		//dropdowncolor.selectByVisibleText("White");
+
+	}
+	
+	public void select_addColor() {
+				
+		Select dropdowncolor = new Select(opt_color);
+		dropdowncolor.selectByIndex(1);
+
 	}
 	
 	public void clickOn_Addsize() {
-		//opt_size.click();
+		opt_size.click();
+
+	}
+	
+	public void select_Addsize() {
+				
 		Select dropdownsize = new Select(opt_size);
 		dropdownsize.selectByIndex(1);
-		
-		//new Select(driver.findElement(By.xpath("(//select[@name='years'])[3]"))).selectByVis‌​ibleText("Mai");
-		
-		//Select dropdownsize = new Select(opt_size); 
-		//dropdownsize.selectByVisibleText("Medium");
+
 	}
 
 }

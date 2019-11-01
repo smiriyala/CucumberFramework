@@ -53,7 +53,12 @@ public class Steps {
 		 js.executeScript("window.scrollBy(0,500)");
 		 
 		 productListingPage.clickOn_addColor();
+		 driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		 productListingPage.select_addColor();
+		 
 		 productListingPage.clickOn_Addsize();
+		 driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		 productListingPage.select_Addsize();
 		 
 		 productListingPage.clickOn_AddToCart(); 
 		 
@@ -63,6 +68,7 @@ public class Steps {
 	public void moves_to_checkout_from_mini_cart() throws Throwable {
 		
 		CartPage cartPage = new CartPage(driver);
+		
 		cartPage.clickOn_Cart();
 		cartPage.clickOn_ContinueToCheckout(); 
 		
