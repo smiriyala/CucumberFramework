@@ -24,11 +24,11 @@ public class ProductListingPage {
 	private List<WebElement> prd_List;	
 	
 	//@FindBy(how = How.ID, using ="pa_color")
-	@FindBy(how = How.XPATH, using ="//*[@id=\"pa_color\"]")
+	@FindBy(how = How.XPATH, using =(".//*[@id=\"pa_color\"]"))
 	private WebElement opt_color;
 	
 	//@FindBy(how = How.ID, using ="pa_size")
-	@FindBy(how = How.XPATH, using ="//*[@id=\"pa_size\"]")
+	@FindBy(how = How.XPATH, using =(".//*[@id=\"pa_size\"]"))
 	private WebElement opt_size;	
 	
 	
