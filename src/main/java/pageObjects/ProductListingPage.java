@@ -52,20 +52,24 @@ public class ProductListingPage {
 	
 	public void select_addColor() {
 				
-		Select dropdowncolor = new Select(opt_colorclick);
-		dropdowncolor.selectByIndex(1);
+		new Select(opt_colorclick).selectByIndex(1);
+		
+		//Select dropdowncolor = new Select(opt_color);
+		//dropdowncolor.selectByIndex(1);
 
 	}
 	
 	public void clickOn_Addsize() {
+		
 		opt_sizeclick.click();
 
 	}
 	
 	public void select_Addsize() {
-				
-		Select dropdownsize = new Select(opt_sizeclick);
-		dropdownsize.selectByIndex(1);
+		
+		new Select(opt_sizeclick).selectByIndex(1);
+		//Select dropdownsize = new Select(opt_size);
+		//dropdownsize.selectByIndex(1);
 
 	}
 
