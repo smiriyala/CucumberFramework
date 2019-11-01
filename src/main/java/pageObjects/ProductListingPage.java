@@ -41,7 +41,7 @@ public class ProductListingPage {
 	}
 	
 	public void clickOn_addColor() {
-		opt_color.click();
+		//opt_color.click();
 		Select dropdowncolor = new Select(opt_color);
 		dropdowncolor.selectByIndex(1);
 		
@@ -50,7 +50,7 @@ public class ProductListingPage {
 	}
 	
 	public void clickOn_Addsize() {
-		opt_size.click();
+		//opt_size.click();
 		Select dropdownsize = new Select(opt_size);
 		dropdownsize.selectByIndex(1);
 		
