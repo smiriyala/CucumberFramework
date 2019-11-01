@@ -7,7 +7,9 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
@@ -30,14 +32,13 @@ public class Steps {
 		
 		System.setProperty("webdriver.chrome.driver","C:\\Libs\\chromedriver.exe");
 		 
-		ChromeOptions chromeOptions = new ChromeOptions();
-	    chromeOptions.addArguments("--verbose");
-	    chromeOptions.addArguments("--whitelisted-ips='192.168.0.14:30650'");
-	    //chromeOptions.addArguments("--proxy-server=192.168.0.14:21414");
-
+		//ChromeOptions chromeOptions = new ChromeOptions();
+	    //chromeOptions.addArguments("--verbose");
+	    //chromeOptions.addArguments("--whitelisted-ips='192.168.0.00:30650'");
+	   // chromeOptions.addArguments("--proxy-server=192.168.0.14:21414");
 
 		
-		driver = new ChromeDriver(chromeOptions);
+		 driver = new ChromeDriver();
 		 driver.manage().window().maximize();
 		 
 		 //Dimension d = new Dimension(1382,744); 

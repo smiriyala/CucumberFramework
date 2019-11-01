@@ -40,9 +40,6 @@ public class ProductListingPage {
 	
 	public void clickOn_addColor() {
 		opt_color.click();
-		
-		Select dropdowncolor = new Select(opt_color);
-		dropdowncolor.selectByIndex(1);
 
 	}
 	
