@@ -32,7 +32,7 @@ public class Steps {
 		 
 		ChromeOptions chromeOptions = new ChromeOptions();
 	    chromeOptions.addArguments("--verbose");
-	    chromeOptions.addArguments("--whitelisted-ips='192.168.0.14'");
+	    chromeOptions.addArguments("--whitelisted-ips='192.168.0.14:30650'");
 	    //chromeOptions.addArguments("--proxy-server=192.168.0.14:21414");
 
 
