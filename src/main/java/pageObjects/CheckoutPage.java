@@ -39,7 +39,7 @@ public class CheckoutPage {
 	 @FindBy(how = How.CSS, using = "#billing_email") 
 	 private WebElement txtbx_Email;
 	 
-	 @FindBy(how = How.CSS, using = "#terms.input-checkbox") 
+	 @FindBy(how = How.ID, using = "terms") 
 	 private WebElement chkbx_AcceptTermsAndCondition;
 	 
 	 @FindBy(how = How.CSS, using = "#place_order") 
@@ -77,7 +77,7 @@ public class CheckoutPage {
 	  
 	 public void check_TermsAndCondition(boolean value) {
 		 
-		 if(value) chkbx_AcceptTermsAndCondition.click();
+		 chkbx_AcceptTermsAndCondition.click();
 	 }
 	 
 	 public void clickOn_PlaceOrder() {
