@@ -2,6 +2,8 @@ package stepDefinitions;
 
 
 import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -25,7 +27,12 @@ public class Steps {
 	public void user_is_on_Home_Page() throws Throwable {
 		System.setProperty("webdriver.chrome.driver","C:\\Libs\\chromedriver.exe");
 		 driver = new ChromeDriver();
-		 driver.manage().window().maximize();
+		 //driver.manage().window().maximize();
+		 
+		 Dimension d = new Dimension(1382,744); 
+		//Resize the current window to the given dimension
+		driver.manage().window().setSize(d); 
+		
 		 driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		 driver.get("http://www.shop.demoqa.com");
 	}
