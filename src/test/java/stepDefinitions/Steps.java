@@ -16,6 +16,7 @@ import org.openqa.selenium.support.ui.Select;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
+import managers.PageObjectManager;
 import pageObjects.CartPage;
 import pageObjects.CheckoutPage;
 import pageObjects.HomePage;
@@ -25,46 +26,44 @@ import pageObjects.ProductListingPage;
 public class Steps {
 	
 	WebDriver driver;
-	HomePage home;
+	HomePage homePage;
 	ProductListingPage productListingPage;
 	CartPage cartPage;
 	CheckoutPage checkoutPage;
+	PageObjectManager pageObjectManager;
 	 
 	@Given("^user is on Home Page$")
 	public void user_is_on_Home_Page() throws Throwable {
 		
 		//System.setProperty("webdriver.chrome.driver","C:\\Libs\\chromedriver.exe");
 		System.setProperty("webdriver.gecko.driver","C:\\libs\\geckodriver.exe");
-		
-		 
-		//ChromeOptions chromeOptions = new ChromeOptions();
-	    //chromeOptions.addArguments("--verbose");
-	    //chromeOptions.addArguments("--whitelisted-ips='192.168.0.00:30650'");
-	   // chromeOptions.addArguments("--proxy-server=192.168.0.14:21414");
 
 		driver= new FirefoxDriver();
 		
 		 //driver = new ChromeDriver();
-		 driver.manage().window().maximize();
+		driver.manage().window().maximize();
 		 
 		 //Dimension d = new Dimension(1382,744); 
 		//Resize the current window to the given dimension
 		//driver.manage().window().setSize(d); 
 		
-		 driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		 driver.get("http://www.shop.demoqa.com");
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.get("http://www.shop.demoqa.com");
+		pageObjectManager = new PageObjectManager(driver);
+		homePage = pageObjectManager.getHomePage();
+		homePage.navigateTo_HomePage();	
 	}
 
 	 @When("^he search for \"([^\"]*)\"$")
 	 public void he_search_for(String product)  {
-		 HomePage home = new HomePage(driver);
-		 home.perform_Search(product);
+		 
+		 homePage.perform_Search(product);
 	 }
 
 	@When("^choose to buy the first item$")
 	public void choose_to_buy_the_first_item() throws Throwable {
 		
-		ProductListingPage productListingPage = new ProductListingPage(driver);
+		 productListingPage = pageObjectManager.getProductListingPage();
 		 productListingPage.select_Product(0);
 		 
 		 JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -96,12 +95,12 @@ public class Steps {
 	@When("^moves to checkout from mini cart$")
 	public void moves_to_checkout_from_mini_cart() throws Throwable {
 		
-		CartPage cartPage = new CartPage(driver);
+		cartPage = pageObjectManager.getCartPage();
 		
 		cartPage.clickOn_Cart();
 		
-		 JavascriptExecutor js = (JavascriptExecutor) driver;
-		 js.executeScript("window.scrollBy(0,500)");
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,500)");
 		 
 		cartPage.clickOn_ContinueToCheckout(); 
 		
@@ -116,7 +115,7 @@ public class Steps {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,500)");
 		
-		checkoutPage = new CheckoutPage(driver);
+		checkoutPage = pageObjectManager.getCheckoutPage();
 		checkoutPage.fill_PersonalDetails(); 
 	}
 

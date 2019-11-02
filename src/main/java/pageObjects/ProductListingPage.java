@@ -21,18 +21,18 @@ public class ProductListingPage {
 	@FindAll(@FindBy(how = How.CSS, using = ".noo-product-inner"))
 	private List<WebElement> prd_List;	
 	
-	@FindBy(how = How.NAME, using =("attribute_pa_color"))
+	@FindBy(how = How.XPATH, using =("//*[@id=\"product-1473\"]/div[1]/div[2]/form/table/tbody/tr[1]/td[2]"))
 	private WebElement opt_colorclick;
 	
-	//@FindBy(how = How.ID, using ="pa_size")
-	@FindBy(how = How.NAME, using =("attribute_pa_size"))
+	//@FindBy(how = How.ID, using ="pa_size")  
+	@FindBy(how = How.ID, using =("pa_size"))
 	private WebElement opt_sizeclick;
 	
-	//@FindBy(how = How.ID, using ="pa_color")
+	//@FindBy(how = How.ID, using ="#pa_color")
 	@FindBy(how = How.XPATH, using =("/html/body/div[2]/div[2]/div/div/div[2]/div[1]/div[2]/form/table/tbody/tr[1]/td[2]/select/option[2]"))
 	private WebElement opt_color;
 	
-	//@FindBy(how = How.ID, using ="pa_size")
+	//@FindBy(how = How.ID, using ="#pa_size")
 	@FindBy(how = How.XPATH, using =("/html/body/div[2]/div[2]/div/div/div[2]/div[1]/div[2]/form/table/tbody/tr[2]/td[2]/select/option[2]"))
 	private WebElement opt_size;	
 	
@@ -42,15 +42,14 @@ public class ProductListingPage {
 	}
 	
 	public void select_Product(int productNumber) {
+		
 		prd_List.get(productNumber).click();
+
 	}
 	
 	public void clickOn_addColor() {
-		
-		
-		
+				
 		opt_colorclick.click();
-
 	}
 	
 	public void select_addColor() {
