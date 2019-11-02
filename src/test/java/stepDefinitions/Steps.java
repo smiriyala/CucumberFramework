@@ -3,6 +3,7 @@ package stepDefinitions;
 
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -11,6 +12,7 @@ import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.ui.Select;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
@@ -69,12 +71,20 @@ public class Steps {
 		 js.executeScript("window.scrollBy(0,500)");
 		 
 		 productListingPage.clickOn_addColor();
-		 driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		 productListingPage.select_addColor();
+		 driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		 //productListingPage.select_addColor();
+		 
+		 Select drpcolor = new Select(driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[2]/div[1]/div[2]/form/table/tbody/tr[1]/td[2]/select")));
+		 drpcolor.selectByIndex(1);
+		 
 		 
 		 productListingPage.clickOn_Addsize();
-		 driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		 productListingPage.select_Addsize();
+		 driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		 //productListingPage.select_Addsize();
+		 
+		 Select drpsize = new Select(driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[2]/div[1]/div[2]/form/table/tbody/tr[2]/td[2]/select")));
+		 drpsize.selectByIndex(1);
+		 
 		 
 		 productListingPage.clickOn_AddToCart(); 
 		 
