@@ -21,11 +21,11 @@ public class ProductListingPage {
 	@FindAll(@FindBy(how = How.CSS, using = ".noo-product-inner"))
 	private List<WebElement> prd_List;	
 	
-	@FindBy(how = How.CSS, using =("#pa_color"))
+	@FindBy(how = How.NAME, using =("attribute_pa_color"))
 	private WebElement opt_colorclick;
 	
 	//@FindBy(how = How.ID, using ="pa_size")
-	@FindBy(how = How.CSS, using =("#pa_size"))
+	@FindBy(how = How.NAME, using =("attribute_pa_size"))
 	private WebElement opt_sizeclick;
 	
 	//@FindBy(how = How.ID, using ="pa_color")
