@@ -70,7 +70,9 @@ public class Steps {
 		 JavascriptExecutor js = (JavascriptExecutor) driver;
 		 js.executeScript("window.scrollBy(0,500)");
 		 
-		 productListingPage.clickOn_addColor();
+		 //productListingPage.clickOn_addColor();
+		 driver.findElement(By.id("pa_color")).click();
+		 
 		 driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		 //productListingPage.select_addColor();
 		 
@@ -78,7 +80,8 @@ public class Steps {
 		 drpcolor.selectByIndex(1);
 		 
 		 
-		 productListingPage.clickOn_Addsize();
+		 //productListingPage.clickOn_Addsize();
+		 driver.findElement(By.id("pa_size")).click();
 		 driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		 //productListingPage.select_Addsize();
 		 
